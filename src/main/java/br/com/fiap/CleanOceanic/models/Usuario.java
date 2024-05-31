@@ -2,11 +2,11 @@ package br.com.fiap.CleanOceanic.models;
 
 import br.com.fiap.CleanOceanic.controllers.dtos.usuario.UsuarioRegisterDTO;
 import br.com.fiap.CleanOceanic.controllers.dtos.usuario.UsuarioUpdateDTO;
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Data

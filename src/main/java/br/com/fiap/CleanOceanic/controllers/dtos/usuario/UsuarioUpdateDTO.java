@@ -1,7 +1,5 @@
 package br.com.fiap.CleanOceanic.controllers.dtos.usuario;
 
-import jakarta.validation.constraints.NotBlank;
-
 public record UsuarioUpdateDTO(
 
         String nome,

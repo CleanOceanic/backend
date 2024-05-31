@@ -4,7 +4,6 @@ import br.com.fiap.CleanOceanic.controllers.dtos.usuario.UsuarioDetailedDTO;
 import br.com.fiap.CleanOceanic.controllers.dtos.usuario.UsuarioRegisterDTO;
 import br.com.fiap.CleanOceanic.controllers.dtos.usuario.UsuarioUpdateDTO;
 import br.com.fiap.CleanOceanic.services.UsuarioService;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -15,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.net.URI;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
