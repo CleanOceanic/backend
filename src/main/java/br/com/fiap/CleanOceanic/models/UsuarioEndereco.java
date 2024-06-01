@@ -16,9 +16,9 @@ import java.time.LocalDateTime;
 @Table(name = "T_USUARIO_ENDERECO")
 public class UsuarioEndereco {
 
-    @Column(name = "id_usuario_endereco")
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_usuario_endereco")
     private Long idUsuarioEndereco;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
@@ -34,10 +34,6 @@ public class UsuarioEndereco {
 
     public UsuarioEndereco(UsuarioEnderecoRegisterDTO usuarioEnderecoRegisterDTO) {
         this.createdAt = LocalDateTime.now();
-    }
-
-    public void updateInformation(UsuarioEnderecoUpdateDTO usuarioEnderecoUpdateDTO) {
-
     }
 
 }

@@ -17,11 +17,11 @@ import java.time.LocalDateTime;
 public class Usuario {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_usuario")
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idUsuario;
 
-    @Column(name = "ds_nome", nullable = false)
+    @Column(name = "ds_nome")
     private String nome;
 
     @Column(name = "dt_data_nascimento")
@@ -30,14 +30,14 @@ public class Usuario {
     @Column(name = "ds_genero")
     private String genero;
 
+    @Column(name = "ds_telefone")
+    private String telefone;
+
     @Column(name = "ds_email")
     private String email;
 
-    @Column(name = "ds_name")
+    @Column(name = "ds_senha")
     private String senha;
-
-    @Column(name = "ds_telefone")
-    private String telefone;
 
     @Column(name = "dt_created_at")
     private LocalDateTime createdAt;
@@ -46,9 +46,9 @@ public class Usuario {
         this.nome = usuarioRegisterDTO.nome();
         this.dataNascimento = usuarioRegisterDTO.dataNascimento();
         this.genero = usuarioRegisterDTO.genero();
+        this.telefone = usuarioRegisterDTO.telefone();
         this.email = usuarioRegisterDTO.email();
         this.senha = usuarioRegisterDTO.senha();
-        this.telefone = usuarioRegisterDTO.telefone();
         this.createdAt = LocalDateTime.now();
     }
 
@@ -65,16 +65,16 @@ public class Usuario {
             this.genero = usuarioUpdateDTO.genero();
         }
 
+        if (usuarioUpdateDTO.telefone() != null) {
+            this.telefone = usuarioUpdateDTO.telefone();
+        }
+
         if (usuarioUpdateDTO.email() != null) {
             this.email = usuarioUpdateDTO.email();
         }
 
         if (usuarioUpdateDTO.senha() != null) {
             this.senha = usuarioUpdateDTO.senha();
-        }
-
-        if (usuarioUpdateDTO.telefone() != null) {
-            this.telefone = usuarioUpdateDTO.telefone();
         }
     }
 

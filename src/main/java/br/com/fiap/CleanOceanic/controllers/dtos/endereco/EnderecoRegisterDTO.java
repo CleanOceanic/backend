@@ -4,19 +4,19 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 public record EnderecoRegisterDTO(
-
         @NotNull
         Long idEndereco,
         @NotBlank
-        String cep,
+        String logradouro,
         @NotBlank
         String numero,
         @NotBlank
-        String sigla,
-        @NotBlank
         String bairro,
         @NotBlank
-        String cidade
-
+        String cidade,
+        @NotBlank
+        String sigla,
+        @NotBlank
+        String cep
 ) {
 }

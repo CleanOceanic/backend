@@ -17,18 +17,15 @@ import java.time.LocalDateTime;
 public class Endereco {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_endereco")
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idEndereco;
 
-    @Column(name = "ds_cep")
-    private String cep;
+    @Column(name = "ds_logradouro")
+    private String logradouro;
 
     @Column(name = "ds_numero")
     private String numero;
-
-    @Column(name = "ds_sigla")
-    private String sigla;
 
     @Column(name = "ds_bairro")
     private String bairro;
@@ -36,29 +33,36 @@ public class Endereco {
     @Column(name = "ds_cidade")
     private String cidade;
 
+    @Column(name = "ds_sigla")
+    private String sigla;
+
+    @Column(name = "ds_cep")
+    private String cep;
+
     @Column(name = "dt_created_at")
     private LocalDateTime createdAt;
 
     public Endereco(EnderecoRegisterDTO enderecoRegisterDTO) {
-        this.cep = enderecoRegisterDTO.cep();
+        this.logradouro = enderecoRegisterDTO.logradouro();
         this.numero = enderecoRegisterDTO.numero();
-        this.sigla = enderecoRegisterDTO.sigla();
         this.bairro = enderecoRegisterDTO.bairro();
         this.cidade = enderecoRegisterDTO.cidade();
+        this.sigla = enderecoRegisterDTO.sigla();
+        this.cep = enderecoRegisterDTO.cep();
         this.createdAt = LocalDateTime.now();
     }
 
     public void updateInformation(EnderecoUpdateDTO enderecoUpdateDTO) {
-        if (enderecoUpdateDTO.cep() != null) {
-            this.cep = enderecoUpdateDTO.cep();
+        if (enderecoUpdateDTO.logradouro() != null){
+            this.logradouro = enderecoUpdateDTO.logradouro();
         }
 
         if (enderecoUpdateDTO.numero() != null) {
             this.numero = enderecoUpdateDTO.numero();
         }
 
-        if (enderecoUpdateDTO.sigla() != null) {
-            this.sigla = enderecoUpdateDTO.sigla();
+        if (enderecoUpdateDTO.cep() != null) {
+            this.cep = enderecoUpdateDTO.cep();
         }
 
         if (enderecoUpdateDTO.bairro() != null) {
@@ -67,6 +71,10 @@ public class Endereco {
 
         if (enderecoUpdateDTO.cidade() != null) {
             this.cidade = enderecoUpdateDTO.cidade();
+        }
+
+        if (enderecoUpdateDTO.sigla() != null) {
+            this.sigla = enderecoUpdateDTO.sigla();
         }
     }
 

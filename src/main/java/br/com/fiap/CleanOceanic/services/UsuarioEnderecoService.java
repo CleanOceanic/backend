@@ -54,17 +54,6 @@ public class UsuarioEnderecoService {
         return new UsuarioEnderecoDetailedDTO(usuarioEndereco);
     }
 
-    public UsuarioEnderecoDetailedDTO update(Long id, UsuarioEnderecoUpdateDTO usuarioEnderecoUpdateDTO) {
-        UsuarioEndereco usuarioEndereco = usuarioEnderecoRepository.findById(id)
-                .orElseThrow(()-> new IllegalArgumentException("Usuario Endereço com o ID: {"+ id +"} Não encontrado na base de dados."));
-
-        usuarioEndereco.updateInformation(usuarioEnderecoUpdateDTO);
-
-        usuarioEnderecoRepository.save(usuarioEndereco);
-
-        return new UsuarioEnderecoDetailedDTO(usuarioEndereco);
-    }
-
     public void delete(Long id) {
         usuarioEnderecoRepository.deleteById(id);
     }

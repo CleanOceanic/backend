@@ -73,17 +73,6 @@ public class UsuarioEnderecoController {
         return ResponseEntity.ok(usuarioEnderecoModel);
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<EntityModel<UsuarioEnderecoDetailedDTO>> update(@PathVariable("id") Long id, @RequestBody @Valid UsuarioEnderecoUpdateDTO usuarioEnderecoUpdateDTO) {
-        UsuarioEnderecoDetailedDTO usuarioEnderecoDetailedDTO = usuarioEnderecoService.update(id, usuarioEnderecoUpdateDTO);
-
-        EntityModel<UsuarioEnderecoDetailedDTO> usuarioEnderecoModel = EntityModel.of(usuarioEnderecoDetailedDTO);
-        Link selfLink = linkTo(methodOn(UsuarioEnderecoController.class).find(id)).withSelfRel();
-        usuarioEnderecoModel.add(selfLink);
-
-        return ResponseEntity.ok(usuarioEnderecoModel);
-    }
-
     @DeleteMapping("/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") Long id) {
         usuarioEnderecoService.delete(id);
