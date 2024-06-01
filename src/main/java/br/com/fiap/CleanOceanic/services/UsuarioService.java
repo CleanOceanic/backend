@@ -20,6 +20,10 @@ public class UsuarioService {
         this.usuarioRepository = usuarioRepository;
     }
 
+    public Usuario find(Long id) {
+        return usuarioRepository.findOneByIdUsuario(id);
+    }
+
     public UsuarioDetailedDTO create(UsuarioRegisterDTO usuarioRegisterDTO) {
         Usuario usuario = new Usuario(usuarioRegisterDTO);
         return new UsuarioDetailedDTO(usuarioRepository.save(usuario));
@@ -30,10 +34,9 @@ public class UsuarioService {
     }
 
     public UsuarioDetailedDTO get(Long id) {
-        Usuario usuario = usuarioRepository.findById(id)
-                .orElseThrow(()-> new IllegalArgumentException("Usuario com o ID: {"+ id +"} Não encontrado na base de dados."));
 
-        return new UsuarioDetailedDTO(usuario);
+        return new UsuarioDetailedDTO(usuarioRepository.findById(id)
+                .orElseThrow(()-> new IllegalArgumentException("Usuario com o ID: {"+ id +"} Não encontrado na base de dados.")));
     }
 
     public UsuarioDetailedDTO update(Long id, UsuarioUpdateDTO usuarioUpdateDTO) {

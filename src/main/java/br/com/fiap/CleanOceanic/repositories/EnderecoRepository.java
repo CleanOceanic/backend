@@ -9,4 +9,6 @@ public interface EnderecoRepository extends JpaRepository<Endereco, Long> {
 
     Page<Endereco> findAll(Pageable pagination);
 
+    Endereco findOneByIdEndereco(Long idEndereco);
+
 }

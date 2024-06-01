@@ -20,6 +20,10 @@ public class EnderecoService {
         this.enderecoRepository = enderecoRepository;
     }
 
+    public Endereco find (Long id){
+        return enderecoRepository.findOneByIdEndereco(id);
+    }
+
     public EnderecoDetailedDTO create(EnderecoRegisterDTO enderecoRegisterDTO) {
         Endereco endereco = new Endereco(enderecoRegisterDTO);
         return new EnderecoDetailedDTO(enderecoRepository.save(endereco));

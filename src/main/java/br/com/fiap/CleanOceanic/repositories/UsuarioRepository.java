@@ -9,4 +9,6 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 
     Page<Usuario> findAll(Pageable pagination);
 
+    Usuario findOneByIdUsuario(Long idUsuario);
+
 }
