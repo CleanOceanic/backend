@@ -1,12 +1,8 @@
 package br.com.fiap.CleanOceanic.controllers.residuoColetado;
 
-import br.com.fiap.CleanOceanic.controllers.dtos.endereco.EnderecoDetailedDTO;
-import br.com.fiap.CleanOceanic.controllers.dtos.endereco.EnderecoUpdateDTO;
 import br.com.fiap.CleanOceanic.controllers.dtos.residuoColetado.ResiduoColetadoDetailedDTO;
 import br.com.fiap.CleanOceanic.controllers.dtos.residuoColetado.ResiduoColetadoRegisterDTO;
 import br.com.fiap.CleanOceanic.controllers.dtos.residuoColetado.ResiduoColetadoUpdateDTO;
-import br.com.fiap.CleanOceanic.controllers.endereco.EnderecoController;
-import br.com.fiap.CleanOceanic.models.ResiduoColetado;
 import br.com.fiap.CleanOceanic.services.ResiduoColetadoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -57,7 +53,7 @@ public class ResiduoColetadoController {
 
         Page<EntityModel<ResiduoColetadoDetailedDTO>> residuoColetadoModels = page.map(residuoColetadoDetailedDTO -> {
             EntityModel<ResiduoColetadoDetailedDTO> residuoColetadoModel = EntityModel.of(residuoColetadoDetailedDTO);
-            Link selfLink = WebMvcLinkBuilder.linkTo(methodOn(EnderecoController.class).find(residuoColetadoDetailedDTO.id())).withSelfRel();
+            Link selfLink = WebMvcLinkBuilder.linkTo(methodOn(ResiduoColetadoController.class).find(residuoColetadoDetailedDTO.id())).withSelfRel();
             residuoColetadoModel.add(selfLink);
             return residuoColetadoModel;
         });

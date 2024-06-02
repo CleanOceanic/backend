@@ -3,7 +3,6 @@ package br.com.fiap.CleanOceanic.controllers.endereco;
 import br.com.fiap.CleanOceanic.controllers.dtos.endereco.EnderecoDetailedDTO;
 import br.com.fiap.CleanOceanic.controllers.dtos.endereco.EnderecoRegisterDTO;
 import br.com.fiap.CleanOceanic.controllers.dtos.endereco.EnderecoUpdateDTO;
-import br.com.fiap.CleanOceanic.controllers.usuario.UsuarioController;
 import br.com.fiap.CleanOceanic.services.EnderecoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

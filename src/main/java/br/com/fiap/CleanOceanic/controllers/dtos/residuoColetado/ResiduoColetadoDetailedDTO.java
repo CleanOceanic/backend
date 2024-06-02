@@ -26,7 +26,7 @@ public record ResiduoColetadoDetailedDTO(
 ) {
 
     public ResiduoColetadoDetailedDTO(ResiduoColetado residuoColetado) {
-        this(residuoColetado.getId(), residuoColetado.getTipo(), residuoColetado.getPeso(),
+        this(residuoColetado.getIdResiduoColetado(), residuoColetado.getTipo(), residuoColetado.getPeso(),
                 residuoColetado.getDataColeta(), residuoColetado.getLocalColeta(), residuoColetado.getOrigemResiduo(),
                 residuoColetado.getObservacaoColeta(),
                 new UsuarioDetailedDTO(residuoColetado.getUsuario()));

@@ -19,7 +19,7 @@ public class ResiduoColetado {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_residuo_coletado")
-    private Long id;
+    private Long idResiduoColetado;
 
     @Column(name = "ds_tipo")
     private String tipo;

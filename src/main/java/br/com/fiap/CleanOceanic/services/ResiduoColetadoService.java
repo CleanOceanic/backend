@@ -24,6 +24,10 @@ public class ResiduoColetadoService {
         this.usuarioService = usuarioService;
     }
 
+    public ResiduoColetado find (Long id){
+        return residuoColetadoRepository.findOneByIdResiduoColetado(id);
+    }
+
     public ResiduoColetadoDetailedDTO create(ResiduoColetadoRegisterDTO residuoColetadoRegisterDTO) {
         ResiduoColetado residuoColetado = new ResiduoColetado(residuoColetadoRegisterDTO);
 
