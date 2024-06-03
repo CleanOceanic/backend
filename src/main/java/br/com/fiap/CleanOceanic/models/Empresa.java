@@ -26,7 +26,6 @@ public class Empresa {
     private String razaoSocial;
 
     @Column(name = "ds_cnpj")
-    @CNPJ
     private String cnpj;
 
     @Column(name = "ds_telefone")
