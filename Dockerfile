@@ -1,32 +1,27 @@
-FROM openjdk:17-jdk AS build
+FROM ubuntu:latest AS build
 
-RUN apt-get update && apt-get install -y \
-    unzip \
-    && rm -rf /var/lib/apt/lists/*
+# Atualizar lista de pacotes
+RUN apt-get update
 
-RUN wget https://services.gradle.org/distributions/gradle-x.x-bin.zip \
-    && unzip -d /opt/gradle gradle-x.x-bin.zip \
-    && rm gradle-x.x-bin.zip
+# Instalar OpenJDK 17
+RUN apt-get install openjdk-17-jdk -y
 
-ENV PATH=$PATH:/opt/gradle/gradle-x.x/bin
+# Copiar código-fonte para o container
+COPY..
 
-COPY build.gradle .
-COPY settings.gradle .
-COPY gradle.properties .
-COPY gradlew .
-COPY gradle ./gradle
+# Instalar Gradle
+RUN apt-get install gradle -y
 
-COPY src ./src
+# Executar comando Gradle para buildar o projeto
+RUN gradle build
 
-# Construindo o projeto Gradle
-RUN ./gradlew build
-
-# Estágio de implantação
 FROM openjdk:17-jdk-slim
 
-# Copiando o arquivo jar construído no estágio de construção
-COPY --from=build /app/build/libs/CleanOceanic-0.0.1-SNAPSHOT.jar app.jar
-
+# Expor porta 8080
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-jar", "app.jar"]
+# Copiar arquivo JAR gerado pelo Gradle para o container
+COPY build/libs/*.jar app.jar
+
+# Definir ponto de entrada do container
+ENTRYPOINT [ "java", "-jar", "app.jar" ]
