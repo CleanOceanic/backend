@@ -7,5 +7,5 @@ COPY build/libs/CleanOceanic-0.0.1-SNAPSHOT.jar app.jar
 # Exponha a porta em que a aplicação será executada
 EXPOSE 8080
 
-# Comando para executar a aplicação com o perfil especificado
+# Comando para executar a aplicação
 ENTRYPOINT ["java", "-jar", "/app.jar"]

@@ -13,7 +13,7 @@ public class SwaggerConfig {
     public OpenAPI OpenApiConfiguration() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("Clean Oceanic - API")
+                        .title("CleanOceanic - API")
                         .version("1.0.0")
                         .description("")
                         .contact(new Contact()
