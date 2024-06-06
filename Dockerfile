@@ -1,25 +1,20 @@
-FROM ubuntu:latest AS build
+# Estágio de build
+FROM eclipse-temurin:17-jdk-alpine AS build
 
-# Atualizar lista de pacotes
-RUN apt-get update
-
-# Instalar OpenJDK 17
-RUN apt-get install openjdk-17-jdk -y
+# Copie o código-fonte para o contêiner
 COPY . .
 
-# Instalar Gradle
-RUN apt-get install gradle -y
-
-# Executar o comando Gradle para construir o projeto
+# Executar comando Gradle para criar o arquivo JAR
 RUN gradle bootJar
 
-FROM openjdk:17-jdk-slim
+# Estágio de runtime
+FROM eclipse-temurin:17-jdk-alpine
 
-# Expor porta 8080
+# Copie o arquivo JAR gerado pelo Gradle para o contêiner
+COPY --from=build build/libs/CleanOceanic-0.0.1-SNAPSHOT.jar app.jar
+
+# Exponha a porta em que a aplicação será executada
 EXPOSE 8080
 
-# Copiar o arquivo JAR gerado pelo Gradle para o contêiner
-COPY --from=build /build/libs/*.jar app.jar
-
-# Definir ponto de entrada do contêiner
-ENTRYPOINT [ "java", "-jar", "app.jar" ]
+# Comando para executar a aplicação com o perfil especificado
+ENTRYPOINT ["java", "-jar", "/app.jar"]
