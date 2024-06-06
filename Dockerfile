@@ -1,11 +1,32 @@
-# Use uma imagem base do JDK 17
-FROM eclipse-temurin:17-jdk-alpine
+FROM openjdk:17-jdk AS build
 
-# Copie o arquivo JAR para o contêiner
-COPY build/libs/CleanOceanic-0.0.1-SNAPSHOT.jar app.jar
+RUN apt-get update && apt-get install -y \
+    unzip \
+    && rm -rf /var/lib/apt/lists/*
 
-# Exponha a porta em que a aplicação será executada
+RUN wget https://services.gradle.org/distributions/gradle-x.x-bin.zip \
+    && unzip -d /opt/gradle gradle-x.x-bin.zip \
+    && rm gradle-x.x-bin.zip
+
+ENV PATH=$PATH:/opt/gradle/gradle-x.x/bin
+
+COPY build.gradle .
+COPY settings.gradle .
+COPY gradle.properties .
+COPY gradlew .
+COPY gradle ./gradle
+
+COPY src ./src
+
+# Construindo o projeto Gradle
+RUN ./gradlew build
+
+# Estágio de implantação
+FROM openjdk:17-jdk-slim
+
+# Copiando o arquivo jar construído no estágio de construção
+COPY --from=build /app/build/libs/CleanOceanic-0.0.1-SNAPSHOT.jar app.jar
+
 EXPOSE 8080
 
-# Comando para executar a aplicação
-ENTRYPOINT ["java", "-jar", "/app.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
