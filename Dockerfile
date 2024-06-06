@@ -4,8 +4,15 @@ FROM eclipse-temurin:17-jdk-alpine AS build
 # Copie o código-fonte para o contêiner
 COPY . .
 
-# Executar comando Gradle para criar o arquivo JAR
-RUN gradle bootJar
+# Copie o script gradlew
+COPY gradlew .
+
+# Install Gradle
+RUN wget https://services.gradle.org/distributions/gradle-7.4.2-bin.zip && \
+    unzip gradle-7.4.2-bin.zip && \
+    rm gradle-7.4.2-bin.zip && \
+    mv gradle-7.4.2 /usr/local/gradle && \
+    export PATH=$PATH:/usr/local/gradle/bin
 
 # Estágio de runtime
 FROM eclipse-temurin:17-jdk-alpine
