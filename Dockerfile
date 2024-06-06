@@ -6,9 +6,6 @@ RUN apt-get update
 # Instalar OpenJDK 17
 RUN apt-get install openjdk-17-jdk -y
 
-# Copiar código-fonte para o container
-COPY..
-
 # Instalar Gradle
 RUN apt-get install gradle -y
 
