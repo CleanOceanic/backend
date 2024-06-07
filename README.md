@@ -16,6 +16,9 @@ promovendo uma reciclagem mais transparente e eficaz. A plataforma visa criar um
 
 ### Video do Software
 [](https://)
+
+### Deploy na Azure
+[](https://)
 #
 
 ## Integrantes do Grupo
