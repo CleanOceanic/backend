@@ -45,6 +45,14 @@ promovendo uma reciclagem mais transparente e eficaz. A plataforma visa criar um
   docker run -p 8080 marceloamellopaixao/clean-oceanic-backend
 ```
 
+## Login ao Executar
+
+#### Acesso Administrador
+- Usuário: admin
+- Senha: admin
+
+
+
 # Documentação da API
 
 Esta documentação descreve os endpoints disponíveis na API e as operações que podem ser realizadas em cada um deles.
