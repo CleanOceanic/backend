@@ -14,32 +14,33 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "T_USUARIO")
+@SequenceGenerator(name = "SEQ_T_USUARIO", sequenceName = "SEQ_T_USUARIO", allocationSize = 1)
 public class Usuario {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_T_USUARIO")
     @Column(name = "id_usuario")
     private Long idUsuario;
 
-    @Column(name = "ds_nome")
+    @Column(name = "ds_nome", nullable = false)
     private String nome;
 
-    @Column(name = "dt_data_nascimento")
+    @Column(name = "dt_data_nascimento", nullable = false)
     private String dataNascimento;
 
-    @Column(name = "ds_genero")
+    @Column(name = "ds_genero", nullable = false)
     private String genero;
 
-    @Column(name = "ds_telefone")
+    @Column(name = "ds_telefone", nullable = false)
     private String telefone;
 
-    @Column(name = "ds_email")
+    @Column(name = "ds_email", nullable = false, unique = true)
     private String email;
 
-    @Column(name = "ds_senha")
+    @Column(name = "ds_senha", nullable = false)
     private String senha;
 
-    @Column(name = "dt_created_at")
+    @Column(name = "dt_created_at", nullable = false)
     private LocalDateTime createdAt;
 
     public Usuario(UsuarioRegisterDTO usuarioRegisterDTO) {
@@ -77,5 +78,4 @@ public class Usuario {
             this.senha = usuarioUpdateDTO.senha();
         }
     }
-
 }

@@ -14,27 +14,28 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "T_DESTINO_RESIDUO")
+@SequenceGenerator(name = "SEQ_T_DESTINO_RESIDUO", sequenceName = "SEQ_T_DESTINO_RESIDUO", allocationSize = 1)
 public class DestinoResiduo {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_T_DESTINO_RESIDUO")
     @Column(name = "id_destino_residuo")
     private Long idDestinoResiduo;
 
-    @Column(name = "ds_nome_local")
+    @Column(name = "ds_nome_local", nullable = false)
     private String nomeLocal;
 
-    @Column(name = "ds_tipo_destino")
+    @Column(name = "ds_tipo_destino", nullable = false)
     private String tipoDestino;
 
-    @Column(name = "vl_quantidade_enviado")
+    @Column(name = "vl_quantidade_enviado", nullable = false)
     private double quantidadeEnviado;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_residuo_coletado")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_residuo_coletado", nullable = false)
     private ResiduoColetado residuoColetado;
 
-    @Column(name = "dt_created_at")
+    @Column(name = "dt_created_at", nullable = false)
     private LocalDateTime createdAt;
 
     public DestinoResiduo(DestinoResiduoRegisterDTO destinoResiduoRegisterDTO) {
@@ -45,7 +46,7 @@ public class DestinoResiduo {
     }
 
     public void updateInformation(DestinoResiduoUpdateDTO destinoResiduoUpdateDTO) {
-        if (destinoResiduoUpdateDTO.nomeLocal() != null){
+        if (destinoResiduoUpdateDTO.nomeLocal() != null) {
             this.nomeLocal = destinoResiduoUpdateDTO.nomeLocal();
         }
 
@@ -56,8 +57,5 @@ public class DestinoResiduo {
         if (destinoResiduoUpdateDTO.quantidadeEnviado() != 0) {
             this.quantidadeEnviado = destinoResiduoUpdateDTO.quantidadeEnviado();
         }
-
-
-
     }
 }

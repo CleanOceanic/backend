@@ -14,10 +14,11 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "T_PONTO_COLETA")
+@SequenceGenerator(name = "SEQ_T_PONTO_COLETA", sequenceName = "SEQ_T_PONTO_COLETA", allocationSize = 1)
 public class PontoColeta {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_T_PONTO_COLETA")
     @Column(name = "id_ponto_coleta")
     private Long idPontoColeta;
 

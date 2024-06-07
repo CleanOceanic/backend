@@ -13,11 +13,12 @@ import java.time.LocalDateTime;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@SequenceGenerator(name = "SEQ_T_RESIDUO_COLETADO", sequenceName = "SEQ_T_RESIDUO_COLETADO", allocationSize = 1)
 @Table(name = "T_RESIDUO_COLETADO")
 public class ResiduoColetado {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_T_RESIDUO_COLETADO")
     @Column(name = "id_residuo_coletado")
     private Long idResiduoColetado;
 
@@ -39,7 +40,7 @@ public class ResiduoColetado {
     @Column(name = "ds_observacao_coleta")
     private String observacaoColeta;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_usuario")
     private Usuario usuario;
 
@@ -57,7 +58,7 @@ public class ResiduoColetado {
     }
 
     public void updateInformation(ResiduoColetadoUpdateDTO residuoColetadoUpdateDTO) {
-        if (residuoColetadoUpdateDTO.tipo() != null){
+        if (residuoColetadoUpdateDTO.tipo() != null) {
             this.tipo = residuoColetadoUpdateDTO.tipo();
         }
 
@@ -81,5 +82,4 @@ public class ResiduoColetado {
             this.observacaoColeta = residuoColetadoUpdateDTO.observacaoColeta();
         }
     }
-
 }
