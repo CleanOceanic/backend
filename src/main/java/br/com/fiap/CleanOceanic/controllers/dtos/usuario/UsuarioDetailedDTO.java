@@ -6,11 +6,8 @@ public record UsuarioDetailedDTO(
 
         Long id,
         String nome,
-
         String dataNascimento,
-
         String genero,
-
         String email,
 
         String senha,

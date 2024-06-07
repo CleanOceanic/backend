@@ -1,16 +1,10 @@
-FROM ubuntu:latest AS build
+FROM eclipse-temurin:17-jdk-alpine
 
-RUN apt-get update
+# Copie o arquivo JAR para o contêiner
+COPY /build/libs/*.jar app.jar
 
-RUN apt-get install openjdk-17-jdk -y
-
-COPY . .
-
-RUN ./gradlew bootJar --no-daemon
-
-FROM openjdk:17-jdk-slim
+# Exponha a porta em que a aplicação será executada
 EXPOSE 8080
 
-COPY --from=build /build/libs/CleanOceanic-0.0.1-SNAPSHOT.jar app.jar
-
-ENTRYPOINT ["java", "-jar", "app.jar"]
+# Comando para executar a aplicação
+ENTRYPOINT ["java", "-jar", "/app.jar"]

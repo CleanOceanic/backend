@@ -24,10 +24,10 @@ public class ResiduoColetado {
     @Column(name = "ds_tipo")
     private String tipo;
 
-    @Column(name = "vl_numero")
+    @Column(name = "vl_peso")
     private double peso;
 
-    @Column(name = "ds_data_coleta")
+    @Column(name = "dt_data_coleta")
     private String dataColeta;
 
     @Column(name = "ds_local_coleta")

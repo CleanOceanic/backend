@@ -31,8 +31,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
 	implementation 'org.springdoc:springdoc-openapi-ui:1.6.11'
 
+	runtimeOnly 'com.oracle.database.jdbc:ojdbc11'
 	compileOnly 'org.projectlombok:lombok:1.18.30'
-	runtimeOnly 'org.postgresql:postgresql'
 	annotationProcessor 'org.projectlombok:lombok:1.18.30'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
