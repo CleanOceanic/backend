@@ -311,5 +311,9 @@ Esta documentação descreve os endpoints disponíveis na API e as operações q
     PUT /api/public/empresaEnderecos/{id}
     ```
 - **DELETE by ID**
-  - **Descrição:** Deleta um endereço de empresa pelo ID.
+  - **Descrição:** Deleta um endereço de usuário pelo ID.
+  - **Exemplo de Requisição:**
+    ```http
+    DELETE /api/public/usuarioEnderecos/{id}
+    ```
  
