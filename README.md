@@ -31,6 +31,20 @@ promovendo uma reciclagem mais transparente e eficaz. A plataforma visa criar um
 - [x] SpringDoc OpenAPI Starter WebMVC UI (`org.springdoc:springdoc-openapi-ui:1.6.11`)
 #
 
+## Passos para Execução do Docker
+
+### 1º Passo: Docker Push
+
+```sh
+  docker push marceloamellopaixao/clean-oceanic-backend:latest
+```
+
+### 2º Passo: Docker Run
+
+```sh
+  docker run -p 8080 marceloamellopaixao/clean-oceanic-backend
+```
+
 # Documentação da API
 
 Esta documentação descreve os endpoints disponíveis na API e as operações que podem ser realizadas em cada um deles.
