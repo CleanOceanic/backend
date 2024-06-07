@@ -345,9 +345,79 @@ Esta documentação descreve os endpoints disponíveis na API e as operações q
     PUT /api/public/empresaEnderecos/{id}
     ```
 - **DELETE by ID**
+  - **Descrição:** Deleta um endereço de empresa pelo ID.
+  - **Exemplo de Requisição:**
+    ```http
+    DELETE /api/public/empresaEnderecos/{id}
+    ```
+
+### 9. Endereços de Usuario
+- **URL Base:** `http://localhost:8080/api/public/usuarioEnderecos`
+
+#### Operações:
+- **POST**
+  - **Descrição:** Cria um novo endereço de usuario.
+  - **Exemplo:** 
+    ```http
+    POST /api/public/usuarioEnderecos
+    ```
+- **GET All**
+  - **Descrição:** Recupera todos os endereços de usuario.
+  - **Exemplo:** 
+    ```http
+    GET /api/public/usuarioEnderecos
+    ```
+- **GET by ID**
+  - **Descrição:** Recupera um endereço de usuario pelo ID.
+  - **Exemplo:** 
+    ```http
+    GET /api/public/usuarioEnderecos/{id}
+    ```
+- **PUT by ID**
+  - **Descrição:** Atualiza um endereço de usuario pelo ID.
+  - **Exemplo:** 
+    ```http
+    PUT /api/public/usuarioEnderecos/{id}
+    ```
+- **DELETE by ID**
   - **Descrição:** Deleta um endereço de usuário pelo ID.
   - **Exemplo de Requisição:**
     ```http
     DELETE /api/public/usuarioEnderecos/{id}
+    ```
+
+### 10. Endereços de Pontos de Coleta
+- **URL Base:** `http://localhost:8080/api/public/pontoColetaEnderecos`
+
+#### Operações:
+- **POST**
+  - **Descrição:** Cria um novo endereço de ponto de coleta.
+  - **Exemplo:** 
+    ```http
+    POST /api/public/pontoColetaEnderecos
+    ```
+- **GET All**
+  - **Descrição:** Recupera todos os endereços de ponto de coleta.
+  - **Exemplo:** 
+    ```http
+    GET /api/public/pontoColetaEnderecos
+    ```
+- **GET by ID**
+  - **Descrição:** Recupera um endereço de ponto de coleta pelo ID.
+  - **Exemplo:** 
+    ```http
+    GET /api/public/pontoColetaEnderecos/{id}
+    ```
+- **PUT by ID**
+  - **Descrição:** Atualiza um endereço de ponto de coleta pelo ID.
+  - **Exemplo:** 
+    ```http
+    PUT /api/public/pontoColetaEnderecos/{id}
+    ```
+- **DELETE by ID**
+  - **Descrição:** Deleta um endereço de ponto de coleta pelo ID.
+  - **Exemplo de Requisição:**
+    ```http
+    DELETE /api/public/pontoColetaEnderecos/{id}
     ```
  
