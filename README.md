@@ -9,6 +9,15 @@ A plataforma facilita a colaboração através de chats, grupos, artigos e video
 informando se são recicláveis, não recicláveis ou tóxicos, e orientando sobre o descarte correto. A Clean Oceanic também permite rastrear e quantificar os resíduos, 
 promovendo uma reciclagem mais transparente e eficaz. A plataforma visa criar uma comunidade comprometida em salvar os oceanos e assegurar um futuro sustentável.
 
+## Links Videos 
+
+### Video Pitch
+[](https://)
+
+### Video do Software
+[](https://)
+#
+
 ## Integrantes do Grupo
 
 - Kaique Santos de Andrade - RM99562
