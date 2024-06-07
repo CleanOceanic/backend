@@ -24,7 +24,7 @@ promovendo uma reciclagem mais transparente e eficaz. A plataforma visa criar um
 - [x] Spring Data JPA (`org.springframework.boot:spring-boot-starter-data-jpa`)
 - [x] Spring Web (`org.springframework.boot:spring-boot-starter-web`)
 - [x] Spring HATEOAS (`org.springframework.boot:spring-boot-starter-hateoas`)
-- [x] H2 Database (`com.h2database:h2`)
+- [x] Oracle Database (`com.oracle.database.jdbc:ojdbc11`)
 - [x] Bean Validation (`org.springframework.boot:spring-boot-starter-validation`)
 - [x] Spring Security (`org.springframework.boot:spring-boot-starter-security`)
 - [x] Spring OAuth2 Client (`org.springframework.boot:spring-boot-starter-oauth2-client`)
