@@ -1,4 +1,5 @@
-# CleanOceanic - Java Advanced
+![CleanOceanicGreenBlue](https://github.com/CleanOceanic/backend/assets/80494196/362a7749-fa63-4b65-9ccb-76cc6a4064c0)
+
 Os oceanos, cobrindo mais de 70% da Terra, são vitais para a vida e a regulação climática, mas estão ameaçados pela poluição, 
 especialmente plástica, com 8 milhões de toneladas de plástico entrando nos oceanos anualmente. Se não houver ações imediatas, 
 até 2050 haverá mais plástico do que peixes. Esse problema não só afeta a vida marinha, mas também a saúde humana, 
@@ -62,7 +63,6 @@ promovendo uma reciclagem mais transparente e eficaz. A plataforma visa criar um
 #### Acesso Administrador
 - Usuário: admin
 - Senha: admin
-
 
 
 # Documentação da API
