@@ -16,10 +16,10 @@ promovendo uma reciclagem mais transparente e eficaz. A plataforma visa criar um
 [Video Pitch](https://youtu.be/8eTHW4eEJ0Y)
 
 ### Video do Software
-[](https://)
+[Video do Software](https://)
 
 ### Deploy na Azure
-[](https://)
+[Deploy na Azure](http://20.253.70.97:8080/swagger-ui.html)
 #
 
 ## Integrantes do Grupo
