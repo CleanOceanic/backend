@@ -12,14 +12,14 @@ promovendo uma reciclagem mais transparente e eficaz. A plataforma visa criar um
 
 ## Links Videos 
 
-### Video Pitch
-[Video Pitch](https://youtu.be/8eTHW4eEJ0Y)
+### Pitch
+https://youtu.be/8eTHW4eEJ0Y
 
 ### Video do Software
 [Video do Software](https://)
 
 ### Deploy na Azure
-[Deploy na Azure](http://20.253.70.97:8080/swagger-ui.html)
+http://20.253.70.97:8080/swagger-ui.html
 #
 
 ## Integrantes do Grupo
