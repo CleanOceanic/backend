@@ -16,7 +16,7 @@ promovendo uma reciclagem mais transparente e eficaz. A plataforma visa criar um
 https://youtu.be/8eTHW4eEJ0Y
 
 ### Video do Software
-[Video do Software](https://)
+https://
 
 ### Deploy na Azure
 http://20.253.70.97:8080/swagger-ui.html
