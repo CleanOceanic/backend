@@ -13,7 +13,7 @@ promovendo uma reciclagem mais transparente e eficaz. A plataforma visa criar um
 ## Links Videos 
 
 ### Video Pitch
-[](https://)
+[Video Pitch](https://youtu.be/8eTHW4eEJ0Y)
 
 ### Video do Software
 [](https://)
